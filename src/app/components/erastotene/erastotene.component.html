@@ -1,9 +1,28 @@
 <h2>Crivello di Erastotene</h2>
-<div class="d-flex flex-wrap">
+<p>Calcolo dei numeri primi &lt;= {{n}}</p>
+
+<div class="d-flex justify-content-between">
+    <div class="d-flex align-items-center my-2">
+        <!--<div class="cella primo"></div>-->
+        <app-erastotene-cella [testo]="''" [primo]="true" ></app-erastotene-cella>
+        <div class="ms-2">indica un numero primo</div>
+    </div>
+    <div class="d-flex align-items-center my-2">
+        <!--<div class="cella nonprimo"></div>-->
+        <app-erastotene-cella [testo]="''" [primo]="false" ></app-erastotene-cella>
+        <div class="ms-2">indica un numero non primo</div>
+    </div>
+</div>
+
+<div class="d-flex flex-wrap my-5">
     <ng-container *ngFor="let numero of numeri; index as i">
-        <div *ngIf="i!=0" class="cella" 
+        <!--<div *ngIf="i!=0" class="cella" 
             [class.nonprimo] ="numero == false"
             [class.primo] ="numero != false"   
-        >{{i}}</div>
+            (click)="click(i)"
+        >{{i}}</div>-->
+        <app-erastotene-cella *ngIf="i!=0" [testo]="i.toString()" [primo]="numero!=false" 
+            (clicked)="click(i)"
+        ></app-erastotene-cella>
     </ng-container>
 </div>
