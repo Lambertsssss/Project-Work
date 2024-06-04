@@ -1,0 +1,8 @@
+<div class="d-flex flex-wrap">
+    <ng-container *ngFor="let numero of numeri; index as i">
+        <div *ngIf="i!=0" class="cella" 
+            [class.nonprimo] ="numero == false"
+            [class.primo] ="numero != false"   
+        >{{i}}</div>
+    </ng-container>
+</div>
