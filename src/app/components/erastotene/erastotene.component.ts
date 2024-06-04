@@ -17,7 +17,8 @@ export class ErastoteneComponent {
 
   constructor(private service: ErastoteneService)
   {
-    this.numeri = service.calcola(this.n);
+    //this.numeri = service.calcola(this.n);
+    service.calcolaRemoto(this.n).subscribe(r => this.numeri = r.map(e => e.primo ? e.numero : false))
   }
 
   click(i:number)

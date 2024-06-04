@@ -1,11 +1,19 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ErastoteneModel } from '../models/erastoteneModel';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ErastoteneService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+
+  calcolaRemoto(n:number)
+  {
+    return this.http.get<ErastoteneModel[]>(`https://eratostene-z5nzzkwikq-uc.a.run.app/${n}/0`)
+  }
+
 
   calcola(n:number) : (number | boolean)[]
   {
