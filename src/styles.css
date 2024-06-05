@@ -1,6 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 body
 {
-    width: 800px;
-    margin: 15px auto;
+    height: 100vh;
+}
+
+.sidebar
+{
+    width: 20%;
+    float: left;
+    border-right: 1px solid black;
+}
+
+.content
+{
+    width: 80%;
+    float: left;
+    padding: 30px;
 }
