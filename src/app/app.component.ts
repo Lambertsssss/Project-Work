@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
-import { CommonModule } from '@angular/common';
-import { StudenteService } from './services/studente.service';
-import { ErastoteneComponent } from './components/erastotene/erastotene.component';
+// import { CommonModule } from '@angular/common';
+// import { StudenteService } from './services/studente.service';
+// import { ErastoteneComponent } from './components/erastotene/erastotene.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,FooterComponent,CommonModule,ErastoteneComponent],
+  imports: [RouterOutlet,FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -17,8 +17,8 @@ export class AppComponent {
 
   studenti:string[] = []
 
-  constructor(private service:StudenteService)
+  constructor()
   {
-    this.studenti = service.getAll();
+  
   }
 }
